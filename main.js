@@ -3,13 +3,12 @@ results = [];
 
 
 function TicTacToe(event) {
-    currentSpot = '.spot#' + event.target.id;
-    if ($(currentSpot).text()==='') {
+    if ($(event.target.id).text()==='') {
         if (numOfPlays % 2 === 0) {
-            $(currentSpot).text('X');
+            $(event.target).text('X');
             results[event.target.id] = 'X';
         } else {
-            $(currentSpot).text('O');
+            $(event.target).text('O');
             results[event.target.id] = 'O';
         }
         numOfPlays++;
@@ -56,5 +55,6 @@ function TicTacToe(event) {
     }
 
 }
+
 
 $('.spot').on('click', TicTacToe);

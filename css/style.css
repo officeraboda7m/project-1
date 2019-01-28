@@ -4,12 +4,13 @@ body {
 
 
 .board {
-    width: 900px;
-    height: 300px;
+    width: 918px;
+    height: 918px;
     background-color: lightgray;
     border: 5px solid black;
     margin: auto;
     display: flex;
+    flex-wrap: wrap;
 }
 
 .spot {
