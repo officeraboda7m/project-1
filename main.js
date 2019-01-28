@@ -1,33 +1,60 @@
-numOfPlays=0;
+numOfPlays = 0;
 results = [];
 
 
-function changeToXorO (event) {
-currentSpot='.spot#'+ event.target.id;
-if(numOfPlays%2===0) {
-$(currentSpot).text('X');
-results[event.target.id]='X';
-} else {
-$(currentSpot).text('O');
-results[event.target.id]='O';
+function TicTacToe(event) {
+    currentSpot = '.spot#' + event.target.id;
+    if ($(currentSpot).text()==='') {
+        if (numOfPlays % 2 === 0) {
+            $(currentSpot).text('X');
+            results[event.target.id] = 'X';
+        } else {
+            $(currentSpot).text('O');
+            results[event.target.id] = 'O';
+        }
+        numOfPlays++;
+    }
+
+    for (i = 0; i < 9; i += 3) {
+        if ((results[i] === 'X') && (results[i + 1] === 'X') && (results[i + 2] === 'X')) {
+            $('.spot').text('X');
+        }
+    }
+
+    for (i = 0; i < 9; i++) {
+        if ((results[i] === 'X') && (results[i + 3] === 'X') && (results[i + 6] === 'X')) {
+            $('.spot').text('X');
+        }
+    }
+
+    if ((results[0] === 'X') && (results[4] === 'X') && (results[8] === 'X')) {
+        $('.spot').text('X');
+    }
+
+    if ((results[2] === 'X') && (results[4] === 'X') && (results[6] === 'X')) {
+        $('.spot').text('X');
+    }
+
+    for (i = 0; i < 9; i += 3) {
+        if ((results[i] === 'O') && (results[i + 1] === 'O') && (results[i + 2] === 'O')) {
+            $('.spot').text('O');
+        }
+    }
+
+    for (i = 0; i < 9; i++) {
+        if ((results[i] === 'O') && (results[i + 3] === 'O') && (results[i + 6] === 'O')) {
+            $('.spot').text('O');
+        }
+    }
+
+    if ((results[0] === 'O') && (results[4] === 'O') && (results[8] === 'O')) {
+        $('.spot').text('O');
+    }
+
+    if ((results[2] === 'O') && (results[4] === 'O') && (results[6] === 'O')) {
+        $('.spot').text('O');
+    }
+
 }
-numOfPlays++;
 
-
-
-// results.push (event.target.id + $(currentSpot).text());
-
-for (i=0 ; i<9 ; i++) {
-if ((results[0]===results[1]===results[2]==='X')) {
-$('.spot').text('X');
-// console.log('A');
-}
-}
-}
-
-// ('0X'&&'1X'&&'2X')||('3X'&&'4X'&&'5X')||('6X'&&'7X'&&'8X')
-// ||('0X'&&'3X'&&'6X')||('1X'&&'4X'&&'7X')||('2X'&&'5X'&&'8X')||('0X'&&'4X'&&'8X')||('2X'&&'4X'&&'6X')
-
-// ||(results[3]===results[4]===results[5]==='X')||(results[6]===results[7]===results[8]==='X')||(results[0]===results[3]===results[6]==='X')||(results[1]===results[4]===results[7]==='X')||(results[2]===results[5]===results[8]==='X')||(results[0]===results[4]===results[8]==='X')||(results[2]===results[4]===results[6]==='X')
-
-$('.spot').on('click', changeToXorO);
+$('.spot').on('click', TicTacToe);
