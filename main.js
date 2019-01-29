@@ -17,49 +17,49 @@ function TicTacToe(event) {
     for (i = 0; i < 9; i += 3) {   //checking for rows if they have a matching 'X'.
         if ((results[i] === 'X') && (results[i + 1] === 'X') && (results[i + 2] === 'X')) {
             $('.spot').text('X');  //if they do and 'X' wins, display 'X' on all spots, to mark the winner.
-            setTimeout (reload, 2000);   //reload page to restart the game.
+            setTimeout (reload, 1000);   //reload page to restart the game.
         }
     }
 
     for (i = 0; i < 9; i++) {   //checking for columns if they have a matching 'X'.
         if ((results[i] === 'X') && (results[i + 3] === 'X') && (results[i + 6] === 'X')) {
             $('.spot').text('X');  //if they do and 'X' wins, display 'X' on all spots.
-            setTimeout (reload, 2000);
+            setTimeout (reload, 1000);
         }
     }
 
     if ((results[0] === 'X') && (results[4] === 'X') && (results[8] === 'X')) {   //chacking corner diameter for matching'X'.
         $('.spot').text('X');
-        setTimeout (reload, 2000);
+        setTimeout (reload, 1000);
     }
 
     if ((results[2] === 'X') && (results[4] === 'X') && (results[6] === 'X')) {   //chacking corner diameter for matching'X'.
         $('.spot').text('X');
-        setTimeout (reload, 2000);
+        setTimeout (reload, 1000);
     }
 
     for (i = 0; i < 9; i += 3) {
         if ((results[i] === 'O') && (results[i + 1] === 'O') && (results[i + 2] === 'O')) {   //repeat for 'O'.
             $('.spot').text('O');
-            setTimeout (reload, 2000);
+            setTimeout (reload, 1000);
         }
     }
 
     for (i = 0; i < 9; i++) {
         if ((results[i] === 'O') && (results[i + 3] === 'O') && (results[i + 6] === 'O')) {
             $('.spot').text('O');
-            setTimeout (reload, 2000);
+            setTimeout (reload, 1000);
         }
     }
 
     if ((results[0] === 'O') && (results[4] === 'O') && (results[8] === 'O')) {
         $('.spot').text('O');
-        setTimeout (reload, 2000);
+        setTimeout (reload, 1000);
     }
 
     if ((results[2] === 'O') && (results[4] === 'O') && (results[6] === 'O')) {
         $('.spot').text('O');
-        setTimeout (reload, 2000);
+        setTimeout (reload, 1000);
     }
 
     
